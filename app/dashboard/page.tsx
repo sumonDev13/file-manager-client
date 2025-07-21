@@ -28,10 +28,10 @@ export default function Dashboard() {
 
   // If there's a user, show the dashboard content
   return user ? (
-    <div>
+    <div className='bg-red min-h-screen p-8' style={{backgroundColor:'black'}}>
       <h1 className="text-3xl font-bold">Dashboard</h1>
       <p className="mt-4 text-xl">Welcome back, {user.displayName}!</p>
-      <div className="mt-8 p-4 border rounded-lg bg-gray-50">
+      <div className="mt-8 p-4 border rounded-lg">
         <h2 className="text-2xl font-semibold">Your Profile Information</h2>
         <ul className="mt-4 space-y-2">
             <li><strong>Email:</strong> {user.email}</li>
