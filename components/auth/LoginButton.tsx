@@ -1,4 +1,3 @@
-// components/auth/LoginButton.tsx
 'use client';
 
 const LoginButton = () => {

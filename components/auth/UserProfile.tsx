@@ -1,4 +1,3 @@
-// components/auth/UserProfile.tsx
 'use client';
 
 import { useState } from 'react';

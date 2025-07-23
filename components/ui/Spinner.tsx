@@ -1,4 +1,3 @@
-// components/ui/Spinner.tsx
 const Spinner = () => {
   return (
     <div
