@@ -1,13 +1,21 @@
-// hooks/useAuth.ts
-'use client';
-
-import { useContext } from 'react';
-import { AuthContext } from '@/contexts/AuthContext';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginSuccess, logout } from '../lib/store/slices/authSlice';
+import { getCurrentUser } from '@/lib/store/api/auth';
 
 export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const user = await getCurrentUser();
+        dispatch(loginSuccess(user));
+      } catch (error) {
+        dispatch(logout());
+      }
+    };
+
+    checkAuth();
+  }, [dispatch]);
 };
